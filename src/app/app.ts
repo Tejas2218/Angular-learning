@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Login } from './login/login';
+import { Signup } from "./signup/signup";
+import { Profile } from './profile/profile';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Login, Signup, Profile],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('angular-learn');
+  title = 'angular-Tejas';
+  name = 'Tejas';
+  a  = 10;
+  b = "raj";
 }
