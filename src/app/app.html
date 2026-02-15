@@ -1,7 +1,26 @@
 <h1>hello angular</h1>
 <hr>
 
-<app-login></app-login>
+@for(user of users; track user){
+    <h2>{{user}}</h2>
+}
+
+
+
+<!------------------------->
+
+<!-- <app-counter></app-counter> -->
+<!-- <app-counter-button></app-counter-button> -->
+
+<hr><hr>
+<!-- 
+<h2>Name is: {{name}}</h2>
+<input type="text" #myInput placeholder="name">
+<button (click)="set(myInput.value)">Set Value</button>
+<button (click)="get()">Get Value</button> -->
+
+
+<!-- <app-login></app-login>
 <app-signup></app-signup>
-<app-profile></app-profile>
+<app-profile></app-profile> -->
 

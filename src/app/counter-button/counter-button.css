@@ -1,0 +1,8 @@
+.counterBtn{
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+    color: black;
+    display: flex;
+    justify-content: center;
+}

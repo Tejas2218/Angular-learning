@@ -1,0 +1,14 @@
+<button (click)="sh()">Show/Hide</button><br>
+<div style="gap: 4px; display: flex;">
+    <button (click)="colorChange('red')">Red</button>
+    <button (click)="colorChange('green')">Green</button>
+    <button (click)="colorChange('blue')">Blue</button>
+    <button (click)="colorChange('yellow')">Yellow</button>
+    <input type="text" placeholder="Enter Color Name" #colorName>
+    <button (click)="colorChange(colorName.value)">Apply</button>
+</div>
+@if(visible){
+<div class="counterBtn" [style.background-color]='color'>
+    <h3 id="text">This is div</h3>
+</div>
+}
