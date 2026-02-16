@@ -8,7 +8,7 @@ import { CounterButton } from './counter-button/counter-button';
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signup, Profile, Counter, CounterButton],
+  imports: [Counter, CounterButton],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
