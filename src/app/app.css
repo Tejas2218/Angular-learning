@@ -1,0 +1,13 @@
+#d1{
+    background-color: rgb(238, 208, 169);
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    /* justify-content: center;
+    display: flex; */
+}
+
+.shadow{
+    box-shadow: 0 5px 15px black;
+}

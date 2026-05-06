@@ -1,7 +1,46 @@
-<h1>counter App</h1>
+<!-- <h1>counter App</h1>
 <div style="text-align: center;">
     <h2 class="count">{{count}}</h2>
     <button class="btn bg-red" (click)="handleCount('-')">Decrement</button>
     <button class="btn bg-black" (click)="handleCount('0')">Reset</button>
     <button class="btn bg-green" (click)="handleCount('+')">Increment</button>
+</div> -->
+
+
+<!----------------------->
+
+<div>
+    <table border="1" class=table>
+        <tr>
+            <th colspan="4">To-Do List</th>
+        </tr>
+        <tr>
+            <th>Idx</th>
+            <th>Task</th>
+            <th>Done</th>
+            <th>Remove</th>
+        </tr>
+        @if(todo.length === 0){
+            <tr>
+                <td class="idx">0</td>
+                <td class="task">No Task Found</td>
+                <td class="done">-</td>
+                <td class="remove">x</td>
+            </tr>
+        }@else {
+            @for(task of todo; track task){
+                <tr>
+                    <td class="idx">{{task.idx}}</td>
+                    <td class="task">{{task.task}}</td>
+                    <td class="done"><input type="checkbox" [checked]="task.isDone" (click)="task.isDone = !task.isDone"></td>
+                    <td class="remove" (click)="del(task.idx)">x</td>
+                </tr>
+            }
+        }
+    </table>
+
+    <h2>Enter Task</h2>
+    <input type="text" [(ngModel)]="val" >
+    <button (click)="add()">Add</button>
+
 </div>

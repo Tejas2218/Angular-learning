@@ -5,10 +5,11 @@ import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
 import { Counter } from './counter/counter';
 import { CounterButton } from './counter-button/counter-button';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [Counter, CounterButton],
+  imports: [Counter, CounterButton, FormsModule, Login, Signup],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -26,4 +27,8 @@ export class App {
   // }
 
   users = ['Anil', 'Sam', 'Tejas', 'Petter', 'Tony'];
+  studentName = "Tejas"
+
+  
+
 }

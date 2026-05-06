@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './login.css',
 })
 export class Login {
-  click(){
-    console.log("button clicked");
-  }
+  // click(){
+  //   console.log("button clicked");
+  // }
+
+  @Input() Pname!: string;
+  @Input() Page!: number;
 }
