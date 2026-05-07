@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [Counter, CounterButton, FormsModule, Login, Signup],
+  imports: [Counter, CounterButton, FormsModule, Login, Signup, Profile],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

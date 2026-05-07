@@ -1,6 +1,14 @@
-<div class="myBox">
-    <h2>3. app Component Third</h2>
-    <h1>Profile Component</h1>
-    <p>Profile works!</p>
-    <button id="btn">CLick Me</button>
-</div>
+<h2>Heading</h2>
+<!-- <h2>{{count()}}</h2>
+<button (click)="update()">+</button>
+
+<h2>{{count2()}}</h2>
+<button (click)="update2()">+</button>
+
+@if(display){
+    <h2>hello</h2>
+} -->
+
+@for(val of arr; track val){
+    <h4>{{$index+1}} : {{val}}</h4>
+}

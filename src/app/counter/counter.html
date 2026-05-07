@@ -20,27 +20,62 @@
             <th>Done</th>
             <th>Remove</th>
         </tr>
-        @if(todo.length === 0){
-            <tr>
-                <td class="idx">0</td>
-                <td class="task">No Task Found</td>
-                <td class="done">-</td>
-                <td class="remove">x</td>
-            </tr>
+        @if(todo().length === 0){
+        <tr>
+            <td class="idx">0</td>
+            <td class="task">No Task Found</td>
+            <td class="done">-</td>
+            <td class="remove">x</td>
+        </tr>
         }@else {
-            @for(task of todo; track task){
-                <tr>
-                    <td class="idx">{{task.idx}}</td>
-                    <td class="task">{{task.task}}</td>
-                    <td class="done"><input type="checkbox" [checked]="task.isDone" (click)="task.isDone = !task.isDone"></td>
-                    <td class="remove" (click)="del(task.idx)">x</td>
-                </tr>
-            }
+        @for(task of todo(); track task){
+        <tr>
+            <td class="idx">{{task.idx}}</td>
+            <td class="task">{{task.task}}</td>
+            <td class="done"><input type="checkbox" [checked]="task.isDone" (change)="doneTog(task.idx)"></td>
+            <td class="remove" (click)="del(task.idx)">x</td>
+        </tr>
+        }
         }
     </table>
 
     <h2>Enter Task</h2>
-    <input type="text" [(ngModel)]="val" >
+    <input type="text" [(ngModel)]="val" (keydown.enter)="add()">
     <button (click)="add()">Add</button>
     <hr>
+
+    <div style="display: flex;">
+        <div>
+            <table border="1" class="status">
+                <tr>
+                    <th colspan="2">Your Complete Task</th>
+                </tr>
+                @for(task of todo(); track task;){
+                    @if(task.isDone){
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{task.task}}</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+        <div>
+            <table border="1" class="status">
+                <tr>
+                    <th colspan="2">Your Incomplete Task</th>
+                </tr>
+                @for(task of todo(); track task;){
+                    @if(!task.isDone){
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{task.task}}</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+
+
 </div>

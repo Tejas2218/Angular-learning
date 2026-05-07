@@ -40,7 +40,7 @@ body {
 }
 
 .table {
-  background-color: #ffffff;
+  background-color: #d8e2f9;
   text-align: center;
   width: 1000px;
   white-space: nowrap;
@@ -48,6 +48,18 @@ body {
   text-overflow: ellipsis;
   border: 1px solid black;
   padding: 8px;
+}
+
+.status{
+  background-color: #d8e2f9;
+  text-align: center;
+  width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid black;
+  padding: 8px;
+  margin: 10px;
 }
 
 th {

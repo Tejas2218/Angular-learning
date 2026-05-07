@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -24,29 +24,64 @@ export class Counter {
     this.count--;
   }*/
 
-  taskTemp = [];
+  // taskTemp = [];
 
-  todo = [
+  todo = signal<any[]>([
     {
       idx: 1,
       task: 'workout',
       isDone: true,
     },
-  ];
+    {
+      idx: 2,
+      task: 'dinner',
+      isDone: false,
+    },
+    {
+      idx: 3,
+      task: 'walking',
+      isDone: false,
+    },
+  ]);
 
-  del(val: number) {
-    this.todo = this.todo.filter((task) => task.idx !== val);
+  len = computed(() => this.todo().length);
+
+  doneLen = computed(() => this.todo().filter((task) => task.isDone === true).length);
+
+  notDoneLen = computed(() => this.todo().filter((task) => task.isDone === false).length);
+
+  constructor() {
+    effect(() => {
+      console.log(this.len());
+      console.log(this.doneLen());
+      console.log(this.notDoneLen());
+    });
   }
 
-  val:string = ""
+  del(val: number) {
+    this.todo.set(this.todo().filter((task) => task.idx !== val));
+  }
+
+  val: string = '';
   add() {
     if (this.val.trim() !== '') {
-      this.todo.push({
-        idx: this.todo.length + 1,
-        task: this.val,
-        isDone: false,
-      });
+      this.todo.update((old) => [
+        ...old,
+        {
+          idx: this.todo().length + 1,
+          task: this.val,
+          isDone: false,
+        },
+      ]);
     }
-    this.val = ""
+    this.val = '';
+  }
+
+  doneTog(idx: number){
+    this.todo.update( val =>
+      val.map(data =>
+        data.idx === idx ? {...data, isDone: !data.isDone} : data
+      )
+    )
   }
 }
