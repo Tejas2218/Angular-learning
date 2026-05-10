@@ -12,7 +12,8 @@
 <!-- <app-counter></app-counter> -->
 <!-- <app-counter-button></app-counter-button> -->
 
-<hr><hr>
+<!-- <hr> -->
+<hr>
 
 <!-- <h2>Name is: {{name}}</h2>
 <input type="text" #myInput placeholder="name">
@@ -25,10 +26,34 @@
 <app-profile></app-profile> -->
 
 <!---------------------------------------------------->
- 
+
 <!-- <app-signup></app-signup> -->
- 
-<app-counter></app-counter>
+
+<!-- <app-counter></app-counter> -->
 
 <!-- <app-profile></app-profile> -->
 
+<nav class="nav">
+    <h2>logo</h2>
+    <ul>
+        <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li>
+            <a routerLink="/signup" routerLinkActive="active">Signup</a>
+        </li>
+        <li>
+            <a routerLink="/counter" routerLinkActive="active">Counter</a>
+        </li>
+        <li>
+            <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+        <li>
+            <a routerLink="/counterBtn" routerLinkActive="active">Counter-Button</a>
+        </li>
+    </ul>
+</nav>
+<hr>
+<hr>
+
+<router-outlet />

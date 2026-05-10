@@ -67,7 +67,7 @@
                 </tr>
                 @for(task of todo(); track task;){
                     @if(!task.isDone){
-                        <tr>
+                        <tr> 
                             <td>{{$index+1}}</td>
                             <td>{{task.task}}</td>
                         </tr>
@@ -76,6 +76,4 @@
             </table>
         </div>
     </div>
-
-
 </div>
