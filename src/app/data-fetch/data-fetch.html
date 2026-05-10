@@ -1,0 +1,15 @@
+<p>data-fetch works!</p>
+<hr>
+<div>
+    @for(user of productList; track user._id){
+        <ul>
+            <li>Name: {{user.name}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Mobile: {{user.mobile}}</li>
+            <li>AadharNo: {{user.aadharCardNumber}}</li>
+            <li>isVoted: {{user.isVoted}}</li>
+            <li>Address: {{user.address}}</li>
+            <li>Age: {{user.age}}</li>
+        </ul>
+    }
+</div>

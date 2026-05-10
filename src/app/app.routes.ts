@@ -8,6 +8,8 @@ import { NotFound } from './not-found/not-found';
 import { App } from './app';
 import { Home } from './home/home';
 import { StuData } from './stu-data/stu-data';
+import { DataFetch } from './data-fetch/data-fetch';
+import { Aip } from './aip/aip';
 
 export const routes: Routes = [
     {path: '', component:Home},
@@ -17,5 +19,7 @@ export const routes: Routes = [
     {path: 'profile', component:Profile},
     {path: 'counterBtn', component:CounterButton},
     {path: 'stuData', component:StuData},
+    {path: 'API', component:Aip},
+    {path: 'dataFetch', component:DataFetch},
     {path: '**', component:NotFound}
 ];
