@@ -1,15 +1,35 @@
 <p>data-fetch works!</p>
 <hr>
 <div>
-    @for(user of productList; track user._id){
-        <ul>
-            <li>Name: {{user.name}}</li>
-            <li>Email: {{user.email}}</li>
-            <li>Mobile: {{user.mobile}}</li>
-            <li>AadharNo: {{user.aadharCardNumber}}</li>
-            <li>isVoted: {{user.isVoted}}</li>
-            <li>Address: {{user.address}}</li>
-            <li>Age: {{user.age}}</li>
-        </ul>
-    }
+    <table border="1" cellspacing="0" cellpadding="10">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Aadhar No</th>
+            <th>Address</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    
+
+    <tbody>
+        @for (user of userList; track $index) {
+
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.mobile}}</td>
+                <td>{{user.aadharCardNumber}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+    
 </div>

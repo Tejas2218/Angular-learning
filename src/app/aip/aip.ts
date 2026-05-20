@@ -15,12 +15,16 @@ export class Aip {
   
 
   showGet(){
-    this.router.navigate(['../dataFetch'])
+    this.router.navigate(['/dataFetch'])
   }
 
-  showPost(){}
+  showPost(){
+    this.router.navigate(['/dataPost'])
+  }
 
-  showPut(){}
+  showPut(){
+    this.router.navigate(['/dataPut'])
+  }
 
   showDelete(){}
 }

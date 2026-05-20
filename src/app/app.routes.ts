@@ -10,6 +10,8 @@ import { Home } from './home/home';
 import { StuData } from './stu-data/stu-data';
 import { DataFetch } from './data-fetch/data-fetch';
 import { Aip } from './aip/aip';
+import { DataPost } from './data-post/data-post';
+import { DataPut } from './data-put/data-put';
 
 export const routes: Routes = [
     {path: '', component:Home},
@@ -20,6 +22,8 @@ export const routes: Routes = [
     {path: 'counterBtn', component:CounterButton},
     {path: 'stuData', component:StuData},
     {path: 'API', component:Aip},
-    {path: 'dataFetch', component:DataFetch},
+    {path: 'dataFetch', component:DataFetch},//GET API
+    {path: 'dataPost', component:DataPost},//POST API
+    {path: 'dataPut', component:DataPut},//POST API
     {path: '**', component:NotFound}
 ];

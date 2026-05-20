@@ -1,29 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Products } from '../services/products';
+import { user } from '../interfaces/user';
 
 @Component({
   selector: 'app-data-fetch',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './data-fetch.html',
   styleUrl: './data-fetch.css',
 })
 export class DataFetch {
+  userList: user[] = [];
 
-  productList:any[] = []
+  constructor(private productServices: Products, private cdr: ChangeDetectorRef) {}
 
-  constructor(private productServices:Products){}
-
-  ngOnInit(){
-
-    this.productServices.getProductList()
-    .subscribe((data:any)=>{
-
-      this.productList = data
-
-      console.log(this.productList)
-
-    })
-
+  ngOnInit() {
+    this.productServices.getUserList().subscribe((data: any) => {
+      // If the API returns an array directly, `data` is the array. 
+      // If it returns an object with a `users` property, use `data.users`.
+      this.userList = Array.isArray(data) ? data : (data.users || []);
+      console.log('userList:', this.userList);
+      
+      // Manually trigger change detection
+      this.cdr.detectChanges();
+    });
   }
-
 }
